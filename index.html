@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#fff8ee" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Mis comidas" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="icon.svg" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Mis comidas</title>
+  </head>
+  <body>
+    <main class="app">
+      <header>
+        <p class="eyebrow">REGISTRO DE COMIDAS</p>
+        <h1>¿Comiste hoy?</h1>
+        <p class="subtitle">Marca lo que tomaste donde la señora.</p>
+      </header>
+
+      <section class="today-card" aria-labelledby="today-title">
+        <div class="section-heading">
+          <div>
+            <p class="label">HOY</p>
+            <h2 id="today-title" data-today>—</h2>
+          </div>
+          <button class="text-button" id="go-today" type="button">Hoy</button>
+        </div>
+
+        <label class="date-picker" for="date">
+          <span>Fecha a registrar</span>
+          <input id="date" type="date" />
+        </label>
+
+        <div class="meal-options">
+          <button class="meal-button" id="lunch" type="button" aria-pressed="false">
+            <span class="meal-icon">☀️</span>
+            <span><strong>Almorcé</strong><small>S/ 11.00</small></span>
+            <span class="check">✓</span>
+          </button>
+          <button class="meal-button" id="dinner" type="button" aria-pressed="false">
+            <span class="meal-icon">🌙</span>
+            <span><strong>Cené</strong><small>S/ 11.00</small></span>
+            <span class="check">✓</span>
+          </button>
+        </div>
+        <p class="save-message" id="save-message" aria-live="polite"></p>
+      </section>
+
+      <section class="summary-card" aria-labelledby="summary-title">
+        <div class="section-heading">
+          <div>
+            <p class="label">RESUMEN</p>
+            <h2 id="summary-title">Este mes</h2>
+          </div>
+          <input id="month" type="month" aria-label="Mes del resumen" />
+        </div>
+        <div class="totals">
+          <div><span id="meal-count">0</span><small>comidas</small></div>
+          <div><span id="amount">S/ 0.00</span><small>por cancelar</small></div>
+        </div>
+        <p class="monthly-detail" id="monthly-detail">Aún no hay comidas registradas.</p>
+        <button class="share-button" id="share-summary" type="button">Compartir resumen</button>
+      </section>
+
+      <section class="history" aria-labelledby="history-title">
+        <div class="section-heading">
+          <div>
+            <p class="label">DETALLE</p>
+            <h2 id="history-title">Registro del mes</h2>
+          </div>
+          <button class="text-button danger" id="clear-month" type="button">Borrar mes</button>
+        </div>
+        <ul id="history-list" class="history-list"></ul>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
