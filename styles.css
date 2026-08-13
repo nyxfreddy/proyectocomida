@@ -1,4 +1,4 @@
-:root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif; color: #292218; background: #fff8ee; }
+:root { color-scheme: light dark; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif; color: #292218; background: #fff8ee; }
 * { box-sizing: border-box; }
 body { margin: 0; min-width: 320px; background: linear-gradient(160deg, #fff8ee 0%, #fdf4e7 100%); }
 button, input { font: inherit; }
@@ -50,3 +50,23 @@ input[type="date"], input[type="month"] { border: 0; background: transparent; co
 .history-total { font-weight: 800; white-space: nowrap; }
 .empty { display: block !important; color: #796c60; font-size: .9rem; padding: 16px 0 !important; }
 @media (min-width: 600px) { .app { padding-top: 48px; } }
+@media (prefers-color-scheme: dark) {
+  :root { color: #f4eee6; background: #171914; }
+  body { background: linear-gradient(160deg, #171914 0%, #20231c 100%); }
+  .eyebrow, .label { color: #d5ad75; }
+  .subtitle { color: #b9b3a9; }
+  .today-card { background: #262922; border-color: #3d4135; box-shadow: 0 8px 30px rgba(0,0,0,.22); }
+  .date-picker { background: #1d201a; color: #c9c3ba; }
+  input[type="date"], input[type="month"] { color: #f4eee6; color-scheme: dark; }
+  .meal-button { background: #2c3028; border-color: #484d40; color: #f5efe7; }
+  .meal-button small { color: #c2b9ae; }
+  .meal-button.selected { background: #244126; border-color: #75ae70; }
+  .meal-button:disabled { background: #21241e; }
+  .check { border-color: #666d5e; }
+  .schedule-note { color: #c3b9ad; }
+  .history-list li { border-color: #3a3d35; }
+  .history-meals { color: #bdb5aa; }
+  .history-meals.no-meal { color: #9e9589; }
+  .text-button { color: #e1a75f; }
+  .danger { color: #e48272; }
+}
