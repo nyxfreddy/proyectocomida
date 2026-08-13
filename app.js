@@ -193,4 +193,13 @@ document.querySelector('#clear-month').addEventListener('click', async () => {
   }
 });
 updateSelectedDate(); updateMealButtons(); renderSummary();
-if ('serviceWorker' in navigator) navigator.serviceWorker.register('./service-worker.js');
+if ('serviceWorker' in navigator) {
+  let refreshedForUpdate = false;
+  navigator.serviceWorker.addEventListener('controllerchange', () => {
+    if (!refreshedForUpdate) {
+      refreshedForUpdate = true;
+      window.location.reload();
+    }
+  });
+  navigator.serviceWorker.register('./service-worker.js').then(registration => registration.update());
+}
