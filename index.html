@@ -15,22 +15,19 @@
   <body>
     <main class="app">
       <header>
-        <p class="eyebrow">REGISTRO DE COMIDAS</p>
-        <h1>¿Comiste hoy?</h1>
-        <p class="subtitle">Marca lo que tomaste donde la señora.</p>
+        <h1>Registro de comidas - Salitral</h1>
       </header>
 
       <section class="today-card" aria-labelledby="today-title">
         <div class="section-heading">
           <div>
-            <p class="label">HOY</p>
-            <h2 id="today-title" data-today>—</h2>
+            <h2 id="today-title" data-selected-date>—</h2>
           </div>
-          <button class="text-button" id="go-today" type="button">Hoy</button>
+          <button class="text-button" id="go-today" type="button" hidden>Volver a hoy</button>
         </div>
 
         <label class="date-picker" for="date">
-          <span>Fecha a registrar</span>
+          <span>Cambiar fecha</span>
           <input id="date" type="date" />
         </label>
 
@@ -46,6 +43,7 @@
             <span class="check">✓</span>
           </button>
         </div>
+        <p class="schedule-note" id="schedule-note" aria-live="polite"></p>
         <p class="save-message" id="save-message" aria-live="polite"></p>
       </section>
 
@@ -62,7 +60,7 @@
           <div><span id="amount">S/ 0.00</span><small>por cancelar</small></div>
         </div>
         <p class="monthly-detail" id="monthly-detail">Aún no hay comidas registradas.</p>
-        <button class="share-button" id="share-summary" type="button">Compartir resumen</button>
+        <button class="share-button" id="share-summary" type="button">Compartir detalle del mes</button>
       </section>
 
       <section class="history" aria-labelledby="history-title">

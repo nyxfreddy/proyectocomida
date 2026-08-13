@@ -7,7 +7,7 @@ button { cursor: pointer; }
 header { padding: 4px 4px 24px; }
 .eyebrow, .label { color: #9b6c3f; font-size: .7rem; font-weight: 800; letter-spacing: .12em; margin: 0 0 6px; }
 h1, h2, p { margin-top: 0; }
-h1 { font-size: clamp(2rem, 8vw, 2.7rem); letter-spacing: -.055em; margin-bottom: 8px; }
+h1 { font-family: ui-rounded, "SF Pro Rounded", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: clamp(1.9rem, 7.5vw, 2.55rem); font-weight: 800; line-height: 1.06; letter-spacing: -.045em; margin-bottom: 8px; }
 h2 { font-size: 1.2rem; letter-spacing: -.025em; margin-bottom: 0; }
 .subtitle { color: #75695e; margin-bottom: 0; }
 .today-card, .summary-card, .history { margin-bottom: 18px; }
@@ -21,12 +21,15 @@ input[type="date"], input[type="month"] { border: 0; background: transparent; co
 .meal-button { display: grid; grid-template-columns: 32px 1fr 30px; align-items: center; gap: 10px; text-align: left; border: 1.5px solid #eadac6; background: #fff; border-radius: 15px; padding: 14px; color: #382b1e; transition: transform .15s, background .15s, border-color .15s; }
 .meal-button:active { transform: scale(.98); }
 .meal-button.selected { background: #e9f4e5; border-color: #86b47e; }
+.meal-button:disabled { cursor: not-allowed; opacity: .48; background: #f7f1e9; }
 .meal-icon { font-size: 1.35rem; }
 .meal-button strong, .meal-button small { display: block; }
 .meal-button small { color: #87776a; font-size: .78rem; margin-top: 2px; }
 .check { display: grid; place-items: center; width: 25px; height: 25px; border-radius: 50%; border: 1.5px solid #d9c9b8; color: transparent; font-weight: 900; }
 .selected .check { background: #4b9449; border-color: #4b9449; color: #fff; }
-.save-message { min-height: 1.2em; color: #468145; font-size: .82rem; font-weight: 600; margin: 12px 0 0; }
+.schedule-note, .save-message { min-height: 1.2em; font-size: .82rem; font-weight: 600; margin: 12px 0 0; }
+.schedule-note { color: #796c60; }
+.save-message { color: #468145; }
 .summary-card { background: #3f633d; border-color: #3f633d; color: #fff; }
 .summary-card .label { color: #cde1c7; }
 .summary-card input { color: #fff; text-align: right; }
@@ -43,6 +46,7 @@ input[type="date"], input[type="month"] { border: 0; background: transparent; co
 .history-list li:last-child { border-bottom: 0; }
 .history-date { font-weight: 700; }
 .history-meals { color: #796c60; font-size: .83rem; margin-top: 3px; }
+.history-meals.no-meal { color: #9a8371; }
 .history-total { font-weight: 800; white-space: nowrap; }
 .empty { display: block !important; color: #796c60; font-size: .9rem; padding: 16px 0 !important; }
 @media (min-width: 600px) { .app { padding-top: 48px; } }
